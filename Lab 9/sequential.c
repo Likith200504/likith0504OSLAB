@@ -3,7 +3,7 @@
 
 #define MAX_BLOCKS 100
 
-int disk[MAX_BLOCKS];  // 0 = free, 1 = allocated
+int disk[MAX_BLOCKS];  
 
 typedef struct {
     int startBlock;
@@ -12,7 +12,7 @@ typedef struct {
 
 void initializeDisk() {
     for (int i = 0; i < MAX_BLOCKS; i++) {
-        disk[i] = 0; // All blocks initially free
+        disk[i] = 0; 
     }
 }
 
@@ -33,10 +33,10 @@ int allocateSequential(File *f, int length) {
             for (int j = 0; j < length; j++) {
                 disk[i + j] = 1;
             }
-            return 1; // Success
+            return 1; 
         }
     }
-    return 0; // Failed
+    return 0; 
 }
 
 void displayFile(File f, int fileIndex) {
